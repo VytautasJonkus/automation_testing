@@ -52,4 +52,9 @@ describe('Practice to learn creating automation tests', () => {
         await myProfile_Button.click();
         await expect(myProfile_Button).toBeClickable();
     });
+    it('Test 8 - ', async() => {
+        const myProfile_Button = $("//div[@id='root']/div[2]/div[2]/div/header/div/div[1]/div[@class='Flex--8h5f1z gBzRLa']/div[2]//button/div");
+        await myProfile_Button.click();
+        await expect(myProfile_Button).toBeClickable();
+    });
 });
