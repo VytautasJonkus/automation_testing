@@ -20,7 +20,7 @@ describe('Practice and learning to create automation tests', () => {
         
     // });
     // it('Test 4 - testing side menu items - Transaction history ', async() => {
-    //     loginPage.transactionHistoryButton.click();
+    //     loginPage.transactionHistoryButton.click();;
     //     // await expect(transactionHistoryButton).toHaveUrl("https://dashboard.honeygain.com/transactions");
     
     });
@@ -39,4 +39,6 @@ describe('Practice and learning to create automation tests', () => {
         await expect(loginPage.myProfileButton).toBeClickable();
     
     });
+
+    
 });
