@@ -14,8 +14,14 @@ class LoginPage extends Page{
     get transactionHistoryButton() { $("//a[@href='/transactions']"); }
     get referralsButton() { return $("//a[@href='/referrals']"); }
     get achievementButton() { return $("//a[@href='/achievements']"); }
-    get myProfileButton() { return $("//div[@id='root']/div[2]/div[2]/div/header/div/div[1]/div[@class='Flex--8h5f1z gBzRLa']/div[2]//button/div"); }
+    get myProfileButton() { return $("div:nth-of-type(1) > .sc-dPwPAC.uEODU  .Spacing--1nc0q8d.kMjeCA > .Flex--8h5f1z.fOdUEO"); }
+    get vButton() { return $("//div[@id='root']/div[2]/div[2]/div/header/div/div[1]/div[@class='Flex--8h5f1z gBzRLa']/div[2]//button/div"); }
 
+//  assertion variables list list
+
+    get myProfilePageHeader() { return $(".INmTe.fgKpYU.sc-DooS.sc-duSInm"); }
+    get myProfilePageTitleCP() {return $('div=Change password'); }
+    
 //  Methods list
 
     async loginForm(emailAdress, password) {
@@ -28,9 +34,6 @@ class LoginPage extends Page{
     async submitDownloadButton() {
         await this.downloadButton.click();
     }
-    async 
-
-
     
 }
 export default new LoginPage();
