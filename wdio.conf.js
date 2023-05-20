@@ -23,7 +23,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/hg_testing.js'
+        './test/specs/**/hg_testing.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -199,8 +199,9 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: async function (suite) {
+        await browser.maximizeWindow();
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
