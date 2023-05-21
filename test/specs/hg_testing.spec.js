@@ -40,6 +40,4 @@ describe('Practice and learning to create automation tests', () => {
         loginPage.unlockAchievements.click();
         // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/achievements");
     });
-
-    
 });
