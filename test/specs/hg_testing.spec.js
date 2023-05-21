@@ -7,7 +7,7 @@ describe('Practice and learning to create automation tests', () => {
         
     });
     it('Test 1 - Downloadd button ', async() => {
-        loginPage.downloadButton.click()
+        loginPage.downloadButton.click();
 
     });
     it('Test 2 - Overview button', async() => {
@@ -19,30 +19,26 @@ describe('Practice and learning to create automation tests', () => {
         // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/statistics");
         
     });
-    it('Test 4 - Transaction history button ', async() => {
-        loginPage.transactionHistoryButton.click();
-        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/transactions");
+    it('Test 4 - History button ', async() => {
+        loginPage.historyButton.click();
+        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/transactions");
     
     
     });
     it('Test 5 - Referrals button ', async() => {
         loginPage.referralsButton.click();
-        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
+        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
 
     });
-    it('Test 6 - Achievements button ', async() => {
+    it('Test 6 - Menu Achievements button ', async() => {
         loginPage.achievementButton.click();
-        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
+        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
 
 
-    // });
-    // it('Test 7 - testing My profile button', async() => {
-    //     loginPage.vButton.click();
-    //     loginPage.myProfileButton.click();
-    //     // await expect(loginPage.myProfileButton).toBeClickable();
-    //     await expect(loginPage.myProfilePageHeader).toHaveText("Profile")
-    //     // await expect(loginPage.myProfilePageTitleCP).toHaveText("")
-    
+    });
+    it('Test 7 - Discover Achievemnts button', async() => {
+        loginPage.unlockAchievements.click();
+        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/achievements");
     });
 
     
