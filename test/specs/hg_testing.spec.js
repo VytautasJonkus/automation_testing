@@ -2,7 +2,7 @@ import loginPage from '../PageObjects/HG_page_objects/login.page';
 
 describe('Practice and learning to create automation tests', () => {
     before(async () => {
-        await browser.url ('/');
+        await browser.url ('/login');
         loginPage.loginForm('vyckatest1@gmail.com', 'Testing123');
         
     });
@@ -16,13 +16,17 @@ describe('Practice and learning to create automation tests', () => {
     });
     it('Test 3 - Statistics button ', async() => {
         loginPage.statisticsButton.click();
-        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/statistics");
+        // waitUntil(browser).toHaveUrl("https://dashboard.honeygain.com/statistics");
+        let lastMontButton = $("//span[.='Last month']")
+        
+        await lastMontButton.waitForExist();
+        await expect(lastMontButton).toBePresent();
         
     });
     it('Test 4 - History button ', async() => {
         loginPage.historyButton.click();
         // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/transactions");
-    
+        // waitUntil(browser.toHaveUrl('https://dashboard.honeygain.com/transactions'));
     
     });
     it('Test 5 - Referrals button ', async() => {
