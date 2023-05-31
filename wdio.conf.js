@@ -53,7 +53,10 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ['start-maximized']
+        }
     }],
     //
     // ===================
@@ -199,9 +202,9 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    beforeSuite: async function (suite) {
-        await browser.maximizeWindow();
-    },
+    // beforeSuite: async function (suite) {
+    //     await browser.maximizeWindow();
+    // },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
