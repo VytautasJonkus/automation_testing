@@ -15,7 +15,8 @@ class LoginPage extends Page{
     get referralsButton()    { return $("//a[.='Referrals']"); }
     get achievementButton()  { return $("//a[.='Achievements']"); }
     get unlockAchievements() { return $("//a[.='Discover Achievements']"); } 
-    
+    get modeButton()         { return $("//div[@class='react-toggle-track']")  }
+
 //  assertion variables list
 
     
