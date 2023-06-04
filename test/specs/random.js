@@ -7,3 +7,5 @@
 // import LoginPage from '../PageObjects/HG_page_objects/login.page';
 
 <span>You’re now earning in the JumpTask mode!</span>
+
+//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']

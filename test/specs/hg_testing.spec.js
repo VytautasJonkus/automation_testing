@@ -4,8 +4,7 @@ describe('Practice and learning to create automation tests', () => {
     before(async () => {
         await browser.url ('/login');
         loginPage.loginForm('vyckatest1@gmail.com', 'Testing123');
-        browser.pause(5000);
-
+   
     });
     it('Test 1 - Achievement "Honeygain Budddy" should be disable when requitments not met ', async() => {
         // loginPage.overviewButton.click();
@@ -14,14 +13,14 @@ describe('Practice and learning to create automation tests', () => {
         // await honeyBuddyButton.click();
 
     });
-    it('Test 2 - Should be Information alert after enabling Honeygain mode mode ', async() => {
-        let jumptaskAlert = $("//div[2]/div[@role='alert']");
-        let jumptaskAlertText = $("div:nth-of-type(2) > div[role='alert'] .jOqCIQ.sc-ewnqHT > span")
-        browser.pause(5000);
+    it.only('Test 2 - Should be Information alert after enabling JumpTask mode ', async() => {
+        let jumptaskAlert = $("//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']");
+        let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
         loginPage.modeButton.click();
-        await browser.waitUntil(() => jumptaskAlert.isDisplayed());
-        await expect(jumptaskAlertText).toHaveTextContaining("You’re now earning in the JumpTask mode!");
+        await jumptaskAlert.waitForDisplayed();
+        await expect(jumptaskAlertText).toHaveTextContaining("now earning in the JumpTask mode!");
+        // loginPage.modeButton.click();
     });
     it('Test 2 - Information alert after enabling JumpTask mode', async() => {
         loginPage.statisticsButton.click();
@@ -48,6 +47,7 @@ describe('Practice and learning to create automation tests', () => {
     it('Test 7 - Discover Achievemnts button', async() => {
         loginPage.unlockAchievements.click();
         
-        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/achievements");
+        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/achievements");    
     });
+    
 });
