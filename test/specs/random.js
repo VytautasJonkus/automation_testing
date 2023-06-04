@@ -8,4 +8,6 @@
 
 <span>You’re now earning in the JumpTask mode!</span>
 
+let copiedToClipboardAllert = $("//a[.='Copied to clipboard'");
+
 //div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']
