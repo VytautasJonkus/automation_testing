@@ -36,9 +36,9 @@ describe('Practice and learning to create automation tests', () => {
         await copiedToClipboardAllert.waitForDisplayed();
         await expect(copiedToClipboardAllert).toHaveAttributeContaining("type", "success");
         
-    });
-    it('Test 6  ', async() => {
-        // loginPage.achievementButton.click();
+    // });
+    // it('Test 6  ', async() => {
+    //     // loginPage.achievementButton.click();
         
 
     });
