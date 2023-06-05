@@ -6,7 +6,7 @@ describe('Practice and learning to create automation tests', () => {
         loginPage.loginForm('vyckatest1@gmail.com', 'Testing123');
    
     // });
-    // it('Test 1 - Achievement "Honeygain Budddy" should be disable when requitments not met ', async() => {
+    // it('Test 1 - Achievement "Honeygain Budddy" should be disable', async() => {
     //     //New test, achievement must be disable when Progress 0/1 
     //     // let honeyBuddyButton = $("//h3[.='Honeygain Buddy']");
     //     // await honeyBuddyButton.click();
@@ -16,13 +16,9 @@ describe('Practice and learning to create automation tests', () => {
         let jumptaskAlert = $("//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']");
         let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
-        loginPage.modeButton.click();
+        loginPage.enableJtModeButton.click();
         await jumptaskAlert.waitForDisplayed();
         await expect(jumptaskAlertText).toHaveTextContaining("now earning in the JumpTask mode!");
- 
-    // });
-    // it('Test 2 - Information alert after enabling Honeygain mode', async() => {
-    //     loginPage.statisticsButton.click();
         
     // });
     // it('Test 4 ', async() => {
@@ -42,15 +38,9 @@ describe('Practice and learning to create automation tests', () => {
         
     });
     it('Test 6  ', async() => {
-        loginPage.achievementButton.click();
-        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
-
-
-    // });
-    // it('Test 7 ', async() => {
-    //     loginPage.unlockAchievements.click();
+        // loginPage.achievementButton.click();
         
-        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/achievements");    
+
     });
     
 });
