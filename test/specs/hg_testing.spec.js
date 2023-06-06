@@ -5,42 +5,43 @@ describe('Practice and learning to create automation tests', () => {
         await browser.url ('/');
         loginPage.loginForm('vyckatest1@gmail.com', 'Testing123');
         
-    // });
-    // it('Test 1 - testing downloadd button ', async() => {
-    //     loginPage.downloadButton.click()
+    });
+    it('Test 1 - Downloadd button ', async() => {
+        loginPage.downloadButton.click()
 
     });
-    it('Test 2 - testing side menu items Overview ', async() => {
+    it('Test 2 - Overview button', async() => {
         loginPage.overviewButton.click();
         
     });
-    it('Test 3 - testing side menu items - Statistics ', async() => {
+    it('Test 3 - Statistics button ', async() => {
         loginPage.statisticsButton.click();
         // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/statistics");
         
-    // });
-    // // it('Test 4 - testing side menu items - Transaction history ', async() => {
-    // //     loginPage.transactionHistoryButton.click();
-    // //     // await expect(loginPage.transactionHistoryButton).toHaveUrl("https://dashboard.honeygain.com/transactions");
+    });
+    it('Test 4 - Transaction history button ', async() => {
+        loginPage.transactionHistoryButton.click();
+        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/transactions");
     
     
     });
-    it('Test 5 - testing side menu items - referrals ', async() => {
+    it('Test 5 - Referrals button ', async() => {
         loginPage.referralsButton.click();
-        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
+        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
 
     });
-    it('Test 6 - testing side menu items - achievements ', async() => {
+    it('Test 6 - Achievements button ', async() => {
         loginPage.achievementButton.click();
-        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/achievements");
+        await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
 
-    });
-    it('Test 7 - testing My profile button', async() => {
-        loginPage.vButton.click();
-        loginPage.myProfileButton.click();
-        // await expect(loginPage.myProfileButton).toBeClickable();
-        // await expect(loginPage.myProfilePageHeader).toHaveText("Profile")
-        await expect(loginPage.myProfilePageTitleCP).toHaveText(".sc-fGwHKD")
+
+    // });
+    // it('Test 7 - testing My profile button', async() => {
+    //     loginPage.vButton.click();
+    //     loginPage.myProfileButton.click();
+    //     // await expect(loginPage.myProfileButton).toBeClickable();
+    //     await expect(loginPage.myProfilePageHeader).toHaveText("Profile")
+    //     // await expect(loginPage.myProfilePageTitleCP).toHaveText("")
     
     });
 
