@@ -53,12 +53,7 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: ['start-maximized', '--incognito'],
-            
-
-        }
+        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
     }],
     //
     // ===================
@@ -91,7 +86,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://dashboard.honeygain.com',
+    baseUrl: 'https://dashboard.honeygain.com/login',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -204,9 +199,9 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    // beforeSuite: async function (suite) {
-    //     await browser.maximizeWindow();
-    // },
+    beforeSuite: async function (suite) {
+        await browser.maximizeWindow();
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
