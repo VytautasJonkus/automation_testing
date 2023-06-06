@@ -30,7 +30,7 @@ describe('Practice and learning to create automation tests', () => {
         // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
 
     });
-    it('Test 6 - Menu Achievements button ', async() => {
+    it('Test 6 - Side Menu Achievements button ', async() => {
         loginPage.achievementButton.click();
         // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/referrals");
 
