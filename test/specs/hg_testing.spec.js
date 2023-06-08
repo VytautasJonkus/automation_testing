@@ -6,7 +6,7 @@ describe('Practice and learning to create automation tests', () => {
         loginPage.loginForm('vyckatest1@gmail.com', 'Testing123');
 
     });
-    it('Test 1 - Should be Information alert after enabling JumpTask mode ', async() => {
+    it('Test 1 - Should be Information alert after changing mode ', async() => {
         let jumptaskAlert = $("//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']");
         let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
