@@ -7,7 +7,7 @@ describe('Practice and learning to create automation tests', () => {
 
     });
     it('Test 1 - Should be Information alert after changing mode ', async() => {
-        let jumptaskAlert = $("//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']");
+        let jumptaskAlert = $("[class='Spacing--1nc0q8d smAke']");
         let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
         loginPage.enableJtModeButton.click();
