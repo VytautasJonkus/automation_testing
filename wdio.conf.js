@@ -55,7 +55,7 @@ exports.config = {
         // capabilities for local browser web tests
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['start-maximized', '--incognito'],
+            args: ['--headless', 'start-maximized', '--incognito'],
             
 
         }
