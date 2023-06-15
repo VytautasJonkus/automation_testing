@@ -4,20 +4,17 @@ class LoginPage extends Page{
 
 //  variables list 
 
-    get emailAdressTab()     { return $('#email'); }
-    get passwordTextbox()    { return $('#password'); }
-    get loginButton()        { return $("//span/div[.='Login with email']"); }   
-    get acceptAllButton()    { return $("//button[.='Accept all']"); }
-    get downloadButton()     { return $("//button[.='Download app']"); }
-    get overviewButton()     { return $("//a[.='Overview']"); }
-    get statisticsButton()   { return $("//a[.='Statistics']"); }
-    get historyButton()      { return $("//a[.='Transactions']"); }
-    get referralsButton()    { return $("//a[.='Referrals']"); }
-    get achievementButton()  { return $("//a[.='Achievements']"); }
-    get unlockAchievements() { return $("//a[.='Discover Achievements']"); } 
-    get enableJtModeButton() { return $("//div[@class='react-toggle-track']")  }
-    get enableHgModeButton() { return $("//div[@class='react-toggle-thumb']")  }
-
+    get boxEmailAdress()     { return $('#email'); }
+    get boxPassword()        { return $('#password'); }
+    get buttonLogin()        { return $("//span/div[.='Login with email']"); }   
+    get buttonCookies()      { return $("//button[.='Accept all']"); }
+    get buttonDownload()     { return $("//button[.='Download app']"); }
+    get buttonOverview()     { return $("//a[.='Overview']"); }
+    get buttonStatistics()   { return $("//a[.='Statistics']"); }
+    get buttonHistory()      { return $("//a[.='Transactions']"); }
+    get buttonReferrals()    { return $("//a[.='Referrals']"); }
+    get buttonAchievements() { return $("//a[.='Achievements']"); }
+    get buttonWalletMode()   { return $("//div[@class='react-toggle-track']")  }
 
 //  assertion variables list
 
@@ -25,15 +22,12 @@ class LoginPage extends Page{
     
 //  Methods list
 
-    async loginForm(emailAdress, password) {
-        await this.emailAdressTab.setValue(emailAdress);
-        await this.passwordTextbox.setValue(password);
-        await this.acceptAllButton.click();
-        await this.loginButton.click();
+    async login(emailAdress, password) {
+        await this.boxEmailAdress.setValue(emailAdress);
+        await this.boxPassword.setValue(password);
+        await this.buttonCookies.click();
+        await this.buttonLogin.click();
   
-    }
-    async submitDownloadButton() {
-        await this.downloadButton.click();
     }
     
 }
