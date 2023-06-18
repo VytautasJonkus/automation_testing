@@ -14,7 +14,8 @@ class LoginPage extends Page{
     get buttonHistory()      { return $("//a[.='Transactions']"); }
     get buttonReferrals()    { return $("//a[.='Referrals']"); }
     get buttonAchievements() { return $("//a[.='Achievements']"); }
-    get buttonWalletMode()   { return $("//div[@class='react-toggle-track']")  }
+    get buttonWalletModeJT() { return $("//div[@class='react-toggle-track']")  }
+    get buttonWalletModeHG() { return $("//div[@class='react-toggle-thumb']")  }
 
 //  assertion variables list
 

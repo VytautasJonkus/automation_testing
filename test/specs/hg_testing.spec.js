@@ -6,27 +6,27 @@ describe('Practice and learning to create automation tests', () => {
         loginPage.login('vyckatest1@gmail.com', 'Testing123');
 
     });
-    it('Test 1 - Should be Information alert after changing mode ', async() => {
-        let jumptaskAlert = $("[class='Spacing--1nc0q8d smAke']");
+    it('Test 1 - Should be Information alert after changing mode ', async() => { 
+        let jumptaskAlert = $(".toast-container:nth-of-type(1) [class='Spacing--1nc0q8d smAke']");
         let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
-        loginPage.buttonWalletMode.click();
+        loginPage.buttonWalletModeJT.click();
         await jumptaskAlert.waitForDisplayed();
         await expect(jumptaskAlertText).toHaveTextContaining("now earning in the JumpTask mode!");
 
-        await loginPage.buttonWalletMode.click();
+        loginPage.buttonWalletModeHG.click();
         await jumptaskAlert.waitForDisplayed();
         await await expect(jumptaskAlertText).toHaveTextContaining("now earning in the Honeygain mode!");
 
     });
     it('Test 2 - Should be a success alert after clicking to copy referral code', async() => {
-        let referralsCopyButton = $("//div//button[.='Copy']");
-        let copiedToClipboardAllert = $("div[type='success']");
+        let buttonRefCopy= $("//div//button[.='Copy']");
+        let alertCopy = $("div[type='success']");
         
         loginPage.buttonReferrals.click();
-        await buttonReferrals.click();
-        await copiedToClipboardAllert.waitForDisplayed();
-        await expect(copiedToClipboardAllert).toHaveAttributeContaining("type", "success");
+        await buttonRefCopy.click();
+        await alertCopy.waitForDisplayed();
+        await expect(alertCopy).toHaveAttributeContaining("type", "success");
 
     });
     
