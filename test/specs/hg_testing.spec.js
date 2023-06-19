@@ -7,16 +7,16 @@ describe('Practice and learning to create automation tests', () => {
 
     });
     it('Test 1 - Should be Information alert after changing mode ', async() => { 
-        let jumptaskAlert = $(".toast-container:nth-of-type(1) [class='Spacing--1nc0q8d smAke']");
-        let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
+        let alertJt = $(".toast-container:nth-of-type(1) [class='Spacing--1nc0q8d smAke']");
+        let alertJtText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
         loginPage.buttonWalletModeJT.click();
-        await jumptaskAlert.waitForDisplayed();
-        await expect(jumptaskAlertText).toHaveTextContaining("now earning in the JumpTask mode!");
+        await alertJt.waitForDisplayed();
+        await expect(alertJtText).toHaveTextContaining("now earning in the JumpTask mode!");
 
         loginPage.buttonWalletModeHG.click();
-        await jumptaskAlert.waitForDisplayed();
-        await await expect(jumptaskAlertText).toHaveTextContaining("now earning in the Honeygain mode!");
+        await alertJt.waitForDisplayed();
+        await await expect(alertJtText).toHaveTextContaining("now earning in the Honeygain mode!");
 
     });
     it('Test 2 - Should be a success alert after clicking to copy referral code', async() => {
