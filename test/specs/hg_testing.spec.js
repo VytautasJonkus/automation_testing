@@ -3,43 +3,30 @@ import loginPage from '../PageObjects/HG_page_objects/login.page';
 describe('Practice and learning to create automation tests', () => {
     before(async () => {
         await browser.url ('/login');
-        loginPage.loginForm('vyckatest1@gmail.com', 'Testing123');
-   
-    // });
-    // it('Test 1 - Achievement "Honeygain Budddy" should be disable', async() => {
-    //     //New test, achievement must be disable when Progress 0/1 
-    //     // let honeyBuddyButton = $("//h3[.='Honeygain Buddy']");
-    //     // await honeyBuddyButton.click();
+        loginPage.login('vyckatest1@gmail.com', 'Testing123');
 
     });
-    it('Test 2 - Should be Information alert after enabling JumpTask mode ', async() => {
-        let jumptaskAlert = $("//div[@class='Toastify__toast-container Toastify__toast-container--bottom-right']");
-        let jumptaskAlertText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
+    it('Test 1 - Should be Information alert after changing mode ', async() => { 
+        let alertJt = $(".toast-container:nth-of-type(1) [class='Spacing--1nc0q8d smAke']");
+        let alertJtText = $("//div[@id='root']/div[1]/div[@class='Toastify']")
 
-        loginPage.enableJtModeButton.click();
-        await jumptaskAlert.waitForDisplayed();
-        await expect(jumptaskAlertText).toHaveTextContaining("now earning in the JumpTask mode!");
-        
-    // });
-    // it('Test 4 ', async() => {
-    //     loginPage.historyButton.click();
-        
-        // waitUntil(browser.toHaveUrl('https://dashboard.honeygain.com/transactions'));
-        // await expect(browser).toHaveUrl("https://dashboard.honeygain.com/transactions");
+        loginPage.buttonWalletModeJT.click();
+        await alertJt.waitForDisplayed();
+        await expect(alertJtText).toHaveTextContaining("now earning in the JumpTask mode!");
+
+        loginPage.buttonWalletModeHG.click();
+        await alertJt.waitForDisplayed();
+        await await expect(alertJtText).toHaveTextContaining("now earning in the Honeygain mode!");
+
     });
-    it('Test 5 - Should be a success alert after clicking to copy referral code', async() => {
-        let referralsCopyButton = $("//div//button[.='Copy']");
-        let copiedToClipboardAllert = $("div[type='success']");
+    it('Test 2 - Should be a success alert after clicking to copy referral code', async() => {
+        let buttonRefCopy= $("//div//button[.='Copy']");
+        let alertCopy = $("div[type='success']");
         
-        loginPage.referralsButton.click();
-        await referralsCopyButton.click();
-        await copiedToClipboardAllert.waitForDisplayed();
-        await expect(copiedToClipboardAllert).toHaveAttributeContaining("type", "success");
-        
-    // });
-    // it('Test 6  ', async() => {
-    //     // loginPage.achievementButton.click();
-        
+        loginPage.buttonReferrals.click();
+        await buttonRefCopy.click();
+        await alertCopy.waitForDisplayed();
+        await expect(alertCopy).toHaveAttributeContaining("type", "success");
 
     });
     
